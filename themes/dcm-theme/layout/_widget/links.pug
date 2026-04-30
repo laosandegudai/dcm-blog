@@ -1,0 +1,19 @@
+//- 友情链接组件
+.widget.links-widget
+  .widget-title
+    i.icon-link
+    span 友情链接
+  
+  if theme.links && theme.links.length
+    .links-list
+      each link in theme.links
+        .link-item
+          a.link-url(href=link.url, target="_blank", title=link.name)
+            if link.avatar
+              img.link-avatar(src=url_for(link.avatar), alt=link.name)
+            .link-info
+              .link-name= link.name
+              if link.desc
+                .link-desc= link.desc
+  else
+    p.widget-empty 暂无友情链接

@@ -1,0 +1,35 @@
+//- 顶部导航栏
+header#header
+  .header-inner
+    //- Logo 和站点名称（左侧）
+    .logo-container
+      if theme.logo
+        a.logo-link(href=url_for("/"))
+          img.logo(src=url_for(theme.logo), alt=config.title)
+      a.site-title(href=url_for("/"))= config.title
+    
+    //- 导航菜单（居中）
+    nav#nav-main
+      ul.nav-list
+        //- 首页
+        li.nav-item
+          a.nav-link(href=url_for("/"))= theme.menu.home.title
+        
+        //- 分类菜单
+        each cat in theme.menu.categories
+          li.nav-item
+            a.nav-link(href=url_for("/categories/" + cat.slug + "/"))= cat.title
+        
+        //- 归档
+        li.nav-item
+          a.nav-link(href=url_for(theme.menu.archive.url))= theme.menu.archive.title
+        
+        //- 关于
+        li.nav-item
+          a.nav-link(href=url_for(theme.menu.about.url))= theme.menu.about.title
+    
+    //- 移动端菜单按钮（右侧）
+    .menu-toggle#menu-toggle
+      span.hamburger-line
+      span.hamburger-line
+      span.hamburger-line

@@ -1,0 +1,29 @@
+//- 基础布局
+doctype html
+html(lang=config.language)
+  include head.pug
+  body
+    //- 顶部导航
+    include header.pug
+    
+    //- 主体内容区
+    main#main
+      .container
+        .content-wrapper
+          //- 左侧主内容区
+          .main-content
+            block content
+          
+          //- 右侧侧边栏
+          include sidebar.pug
+    
+    //- 页脚
+    include footer.pug
+    
+    //- JavaScript
+    script(src=url_for("js/search.js"))
+    script.
+      // 移动端菜单切换
+      document.getElementById('menu-toggle')?.addEventListener('click', function() {
+        document.getElementById('nav-main').classList.toggle('active');
+      });

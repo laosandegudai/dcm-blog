@@ -1,0 +1,16 @@
+//- 最近文章组件
+.widget.recent-posts-widget
+  .widget-title
+    i.icon-clock
+    span 最近文章
+  
+  if site.posts && site.posts.length
+    .recent-list
+      - var posts = site.posts.sort('date', -1).limit(theme.recent_posts_count || 5).toArray()
+      each post in posts
+        .recent-item
+          a.recent-link(href=url_for(post.path))
+            span.recent-title= post.title || "无标题"
+            span.recent-date= post.date.format(config.date_format || 'YYYY-MM-DD')
+  else
+    p.widget-empty 暂无文章

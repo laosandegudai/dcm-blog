@@ -1,0 +1,26 @@
+extends base.pug
+
+block content
+  .archive-page
+    h1.page-title= page.title || "归档"
+    
+    //- 按年份归档
+    .archive-list
+      - var year = 0
+      each post in page.posts.toArray()
+        - var postYear = post.date.year()
+        if postYear !== year
+          - year = postYear
+          h2.archive-year= year
+        
+        .archive-item
+          .archive-date= post.date.format('MM-DD')
+          .archive-title
+            a(href=url_for(post.path))= post.title || "无标题"
+            if post.categories && post.categories.length
+              span.archive-category
+                each cat in post.categories.toArray()
+                  a(href=url_for(cat.path))= cat.name
+    
+  //- 分页
+  include paginator.pug

@@ -1,0 +1,23 @@
+//- 分页组件
+if page.total > 1
+  .paginator
+    .paginator-inner
+      //- 上一页
+      if page.prev
+        a.prev-page(href=url_for(page.prev_link)) ← 上一页
+      else
+        span.prev-page.disabled ← 上一页
+      
+      //- 页码
+      .page-numbers
+        each i in page.range
+          if i === page.current
+            span.page-number.current= i
+          else
+            a.page-number(href=url_for(i === 1 ? page.base : page.base + 'page/' + i + '/'))= i
+      
+      //- 下一页
+      if page.next
+        a.next-page(href=url_for(page.next_link)) 下一页 →
+      else
+        span.next-page.disabled 下一页 →

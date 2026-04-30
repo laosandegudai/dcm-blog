@@ -1,0 +1,15 @@
+//- 标签组件
+.widget.tag-widget
+  .widget-title
+    i.icon-tag
+    span 标签
+  
+  if site.tags && site.tags.length
+    .tag-cloud
+      each tag in site.tags.toArray()
+        a.tag-link(href=url_for(tag.path), style="font-size: " + (Math.min(1.2, 0.8 + tag.length / 20) + "rem"))
+          = tag.name
+          if theme.show_tag_count
+            span.tag-count (#{tag.length})
+  else
+    p.widget-empty 暂无标签

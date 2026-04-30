@@ -1,0 +1,55 @@
+extends base.pug
+
+block content
+  //- 文章列表
+  .post-list
+    each post in page.posts.toArray()
+      article.post-card
+        //- 文章标题（上方）
+        .post-header
+          h2.post-title
+            a(href=url_for(post.path))= post.title || "无标题"
+        
+        //- 文章摘要（中间）
+        .post-excerpt
+          if post.description
+            != post.description
+          else if post.excerpt
+            != post.excerpt
+          else if post.content
+            - const content = strip_html(post.content)
+            - const excerpt = content.substring(0, theme.excerpt_length || 200)
+            = content.length > theme.excerpt_length ? excerpt + '...' : excerpt
+        
+        //- 元信息（摘要下方）：作者、时间、分类、标签、阅读全文
+        .post-meta-bottom
+          .post-meta-left
+            span.post-author
+              i.icon-user
+              = post.author||config.author || "作者"
+            
+            span.post-date
+              i.icon-calendar
+              = post.date.format(config.date_format || 'YYYY-MM-DD')
+            
+            if post.categories && post.categories.length
+              span.post-category
+                i.icon-folder
+                each cat, index in post.categories.toArray()
+                  a(href=url_for(cat.path))= cat.name
+                  if index < post.categories.length - 1
+                    span.separator /
+
+            if post.tags && post.tags.length
+              span.post-tags
+                i.icon-tag
+                each tag, index in post.tags.toArray()
+                  a(href=url_for(tag.path))= tag.name
+                  if index < post.tags.length - 1
+                    span.separator /
+          
+          .post-meta-right
+            a.read-more(href=url_for(post.path)) 阅读全文 →
+  
+  //- 分页
+  include paginator.pug

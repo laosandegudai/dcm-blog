@@ -1,0 +1,16 @@
+//- 侧边栏容器
+aside#sidebar
+  each widget in theme.sidebar_widgets
+    case widget
+      when "search"
+        include _widget/search.pug
+      when "author"
+        include _widget/author.pug
+      when "category"
+        include _widget/category.pug
+      when "tag"
+        include _widget/tag.pug
+      when "recent_posts"
+        include _widget/recent_posts.pug
+      when "links"
+        include _widget/links.pug

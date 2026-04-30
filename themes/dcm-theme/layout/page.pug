@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+  .page-full
+    .page-header
+      h1.page-title= page.title || "页面"
+    
+    .page-content
+      != page.content

@@ -1,0 +1,23 @@
+//- 作者信息组件
+.widget.author-widget
+  .author-info
+    //- 作者头像
+    .author-avatar
+      if theme.author.avatar
+        img(src=url_for(theme.author.avatar), alt=config.author || theme.author.name)
+      else
+        .avatar-placeholder= (config.author || theme.author.name || "A").substring(0, 1)
+    
+    //- 作者名称（优先使用 Hexo 主配置的 author）
+    h3.author-name= config.author || theme.author.name || "作者"
+    
+    //- 作者描述
+    if theme.author.description
+      p.author-desc= theme.author.description
+    
+    //- 联系方式
+    if theme.author.contacts && theme.author.contacts.length
+      .author-contacts
+        each contact in theme.author.contacts
+          a.contact-link(href=contact.url, target="_blank", title=contact.icon)
+            i(class="icon-" + contact.icon)

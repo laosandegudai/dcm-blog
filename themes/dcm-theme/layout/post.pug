@@ -1,0 +1,70 @@
+extends base.pug
+
+block content
+  if page && page.title !== undefined
+    article.post-full
+      .post-header
+        h1.post-title= page.title || "无标题"
+        
+        .post-meta
+          span.post-author
+            i.icon-user
+            = page.author || config.author || "作者"
+
+          span.post-date
+            i.icon-calendar
+            = page.date.format(config.date_format || 'YYYY-MM-DD')
+          
+          if page.categories && page.categories.length
+            span.post-category
+              i.icon-folder
+              each cat, index in page.categories.toArray()
+                a(href=url_for(cat.path))= cat.name
+                if index < page.categories.length - 1
+                  span.separator /
+          
+          if page.tags && page.tags.length
+            span.post-tags
+              i.icon-tag
+              each tag, index in page.tags.toArray()
+                a(href=url_for(tag.path))= tag.name
+                if index < page.tags.length - 1
+                  span.separator
+      
+      //- 文章目录（如果有）
+      if theme.toc && page.toc
+        .post-toc
+          h3.toc-title 目录
+          != toc(page.content)
+      
+      //- 文章内容
+      .post-content
+        != page.content
+      
+      //- 文章底部
+      .post-footer
+        //- 标签
+        if page.tags && page.tags.length
+          .post-tags-bottom
+            h4 标签
+            each tag in page.tags.toArray()
+              a.tag-link(href=url_for(tag.path))= tag.name
+        
+        //- 分享按钮（可选）
+        if theme.share_enable
+          .post-share
+            h4 分享
+            //- 添加分享按钮
+        
+        //- 上一篇/下一篇
+        .post-nav
+          .prev-post
+            if page.prev
+              a(href=url_for(page.prev.path))
+                span.nav-label ← 上一篇
+                span.nav-title= page.prev.title
+          .next-post
+            if page.next
+              a(href=url_for(page.next.path))
+                span.nav-label 下一篇 →
+                span.nav-title= page.next.title

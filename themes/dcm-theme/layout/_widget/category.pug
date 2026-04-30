@@ -1,0 +1,16 @@
+//- 分类组件
+.widget.category-widget
+  .widget-title
+    i.icon-folder
+    span 分类
+  
+  if site.categories && site.categories.length
+    ul.category-list
+      each cat in site.categories.toArray()
+        li.category-item
+          a.category-link(href=url_for(cat.path))
+            span.category-name= cat.name
+            if theme.show_category_count
+              span.category-count= cat.length
+  else
+    p.widget-empty 暂无分类
