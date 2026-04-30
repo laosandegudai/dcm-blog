@@ -5,9 +5,10 @@
   if (!searchInput || !searchResult) return;
 
   let searchData = [];
+  const searchXmlPath = (searchInput.getAttribute('data-root') || '/') + 'search.xml';
 
   // 加载搜索数据
-  fetch('/search.xml')
+  fetch(searchXmlPath)
     .then(res => res.text())
     .then(str => {
       const parser = new DOMParser();

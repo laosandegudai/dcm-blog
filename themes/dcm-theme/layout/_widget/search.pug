@@ -1,5 +1,6 @@
 //- 搜索组件（极简版，只显示输入框）
+//- data-root 属性用于向 search.js 传递站点子目录前缀
 .widget.search-widget
   .search-input-wrapper
-    input#search-input.search-input(type="text", placeholder="搜索...")
+    input#search-input.search-input(type="text", placeholder="搜索...", data-root=config.root || '/')
     .search-result#search-result
