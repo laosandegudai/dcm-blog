@@ -20,14 +20,14 @@ date: 2026-04-30 23:07:18
 ## 技术栈
 
 - **前端**：JavaScript / TypeScript / Vue / React
-- **后端**：C# / .NET / Node.js
+- **后端**：C# / java
 - **工具**：Git / Docker / Hexo
 - **AI**：关注 AI 辅助开发的应用实践
 
 ## 联系方式
 
 - **GitHub**：[laosandegudai](https://github.com)
-- **Email**：xxx@example.com
+- **Email**：839820152@qq.com
 
 ---
 
