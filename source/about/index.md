@@ -19,7 +19,7 @@ date: 2026-04-30 23:07:18
 
 ## 技术栈
 
-- **前端**：JavaScript / TypeScript / Vue / React
+- **前端**：JavaScript / TypeScript / Vue / React(应用)
 - **后端**：C# / java
 - **工具**：Git / Docker / Hexo
 - **AI**：关注 AI 辅助开发的应用实践
