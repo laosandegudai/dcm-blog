@@ -1,8 +1,10 @@
 ---
 title: "Hello World"
 date: 2026-05-26 22:55:08
-updated: 2026-05-26 22:56:50
+updated: 2026-05-26 23:16:47
 author: "戴箍的三佬"
+description: "Hexo启动，第一篇。静态站点。"
+excerpt: "Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub."
 tags:
   - 随笔
 categories:

@@ -12,10 +12,10 @@ block content
         
         //- 文章摘要（中间）
         .post-excerpt
-          if post.description
-            != post.description
-          else if post.excerpt
+          if post.excerpt
             != post.excerpt
+          else if post.description
+            != post.description
           else if post.content
             - const content = strip_html(post.content)
             - const excerpt = content.substring(0, theme.excerpt_length || 200)
