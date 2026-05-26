@@ -3,7 +3,13 @@ head
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
   title= page.title ? page.title + " | " + config.title : config.title
   meta(name="description", content=config.description || theme.author.description)
-  meta(name="keywords", content=config.keywords)
+  if page && page.keywords
+    if Array.isArray(page.keywords)
+      meta(name="keywords", content=page.keywords.join(','))
+    else
+      meta(name="keywords", content=page.keywords)
+  else
+    meta(name="keywords", content=config.keywords)
   
   //- CSS
   link(rel="stylesheet", href=url_for("css/style.css"))

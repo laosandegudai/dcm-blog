@@ -19,5 +19,4 @@
     if theme.author.contacts && theme.author.contacts.length
       .author-contacts
         each contact in theme.author.contacts
-          a.contact-link(href=contact.url, target="_blank", title=contact.icon)
-            i(class="icon-" + contact.icon)
+          a.contact-link(href=contact.url, target="_blank")= contact.label || contact.icon

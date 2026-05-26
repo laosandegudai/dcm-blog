@@ -24,10 +24,9 @@ menu:
 author:
   name: "作者名称"
   avatar: "/img/avatar.png"
-  description: "生命依然顽强，生活依旧美好"
+  description: "[南阳] 生命依然顽强，生活依旧美好"
   contacts:
-    - { icon: "github", url: "https://github.com/xxx" }
-    - { icon: "email", url: "mailto:xxx@example.com" }
+    - { icon: "email", url: "mailto:839820152@qq.com", label: "Email：839820152@qq.com" }
 
 # =================== 侧边栏组件顺序 ===================
 sidebar_widgets:

@@ -198,6 +198,17 @@ a {
           }
         }
       }
+      
+      .post-keywords {
+        .keyword-item {
+          color: $primary-color;
+          font-weight: 500;
+        }
+        
+        .separator {
+          margin: 0 2px;
+        }
+      }
     }
     
     .post-meta-right {
@@ -241,6 +252,47 @@ a {
     }
   }
 }
+
+// 作者联系方式
+.author-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    color: $secondary-color;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+    
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+    
+    i {
+      font-style: normal;
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .contact-label {
+      display: inline;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// 图标
+.icon-email::before { content: "✉"; }
+.icon-github::before { content: "⌘"; font-weight: bold; }
 
 // 搜索组件（极简版，只显示输入框）
 .search-widget {

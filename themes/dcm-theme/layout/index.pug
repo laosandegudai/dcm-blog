@@ -47,6 +47,17 @@ block content
                   a(href=url_for(tag.path))= tag.name
                   if index < post.tags.length - 1
                     span.separator /
+
+            if post.keywords
+              span.post-keywords
+                i.icon-key
+                if Array.isArray(post.keywords)
+                  each kw, index in post.keywords
+                    span.keyword-item= kw
+                    if index < post.keywords.length - 1
+                      span.separator ,
+                else
+                  span.keyword-item= post.keywords
           
           .post-meta-right
             a.read-more(href=url_for(post.path)) 阅读全文 →

@@ -29,6 +29,17 @@
           margin-right: 5px;
         }
       }
+      
+      .post-keywords {
+        .keyword-item {
+          color: $primary-color;
+          font-weight: 500;
+        }
+        
+        .separator {
+          margin: 0 3px;
+        }
+      }
     }
   }
   
@@ -74,6 +85,26 @@
   .post-footer {
     border-top: 1px solid $border-color;
     padding-top: 20px;
+    
+    .post-keywords-bottom {
+      margin-bottom: 20px;
+      
+      h4 {
+        margin-bottom: 10px;
+      }
+      
+      .keyword-link {
+        display: inline-block;
+        padding: 3px 10px;
+        background-color: #e8f4fd;
+        border-radius: 3px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: $primary-color;
+        border: 1px solid #d0e8f7;
+      }
+    }
     
     .post-tags-bottom {
       margin-bottom: 20px;

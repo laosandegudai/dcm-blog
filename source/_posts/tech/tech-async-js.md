@@ -3,6 +3,12 @@ title: "深入理解 JavaScript 异步编程"
 date: 2026-04-30 10:00:00
 tags: [JavaScript, 异步, Promise, async/await]
 categories: [技术]
+keywords:
+  - JavaScript
+  - 异步编程
+  - Promise
+  - async/await
+  - 回调函数
 ---
 
 ## 前言
