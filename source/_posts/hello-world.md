@@ -1,5 +1,12 @@
 ---
-title: Hello World
+title: "Hello World"
+date: 2026-05-26 22:55:08
+updated: 2026-05-26 22:56:50
+author: "戴箍的三佬"
+tags:
+  - 随笔
+categories:
+  - 随笔
 keywords:
   - Hexo
   - 博客
@@ -40,3 +47,4 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+

@@ -30,17 +30,6 @@ block content
                 a(href=url_for(tag.path))= tag.name
                 if index < page.tags.length - 1
                   span.separator
-
-          if page.keywords
-            span.post-keywords
-              i.icon-key
-              if Array.isArray(page.keywords)
-                each kw, index in page.keywords
-                  span.keyword-item= kw
-                  if index < page.keywords.length - 1
-                    span.separator ,
-              else
-                span.keyword-item= page.keywords
       
       //- 文章目录（如果有）
       if theme.toc && page.toc
@@ -54,16 +43,6 @@ block content
       
       //- 文章底部
       .post-footer
-        //- 关键词
-        if page.keywords
-          .post-keywords-bottom
-            h4 关键词
-            if Array.isArray(page.keywords)
-              each kw in page.keywords
-                span.keyword-link= kw
-            else
-              span.keyword-link= page.keywords
-
         //- 标签
         if page.tags && page.tags.length
           .post-tags-bottom

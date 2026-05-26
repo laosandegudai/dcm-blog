@@ -1,7 +1,11 @@
 ---
 title: "Caddy Web服务器入门与实践笔记"
 date: 2026-05-23 18:15:22
-updated: 2026-05-23 21:45:21
+updated: 2026-05-26 22:04:25
+author: "戴箍的三佬"
+excerpt: "Caddy Web 服务器"
+tags:
+  - Caddy
 keywords:
   - Caddy
   - Web服务器
@@ -207,5 +211,7 @@ sudo chmod 755 /var/log/www
 
 # 8. 总结
 Caddy 的最大优势是自动 HTTPS 和简洁的配置语法。但是文档真的是一言难尽，不够系统纯api。
+
+
 
 
