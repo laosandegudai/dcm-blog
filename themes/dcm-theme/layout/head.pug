@@ -29,3 +29,14 @@ head
   //- RSS
   if config.feed
     link(rel="alternate", type="application/atom+xml", href=url_for(config.feed.path || "atom.xml"))
+
+  //- Baidu Analytics
+  if theme.baidu_analytics
+    script.
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?!{theme.baidu_analytics}";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();

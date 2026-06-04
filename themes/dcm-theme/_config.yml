@@ -3,6 +3,7 @@
 # =================== 站点配置 ===================
 # Logo 图片路径（相对于 theme/source/ 目录）
 logo: "/img/logo.png"
+icp: "豫ICP备15029427号"
 
 # =================== 菜单配置 ===================
 menu:
@@ -60,3 +61,5 @@ recent_posts_count: 5
 # =================== 主题信息 ===================
 theme_name: dcm-theme
 theme_version: "1.0.0"
+
+baidu_analytics: 0bb4d40ef2c0e2aa9ab05e208b497043
